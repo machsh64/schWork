@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE beans [
+    <!ELEMENT beans (bean*)>
+    <!ELEMENT bean (property*)>
+    <!ELEMENT property (#PCDATA)>
+
+    <!ATTLIST bean id ID #REQUIRED>
+    <!ATTLIST bean class CDATA #IMPLIED>
+    <!ATTLIST property name CDATA #IMPLIED>
+    <!ATTLIST property ref IDREF #IMPLIED>
+]>
+
+<beans>
+
+    <bean id="playerMapper" class="com.ren.liveShow.mapper.PlayerMapper"/>
+
+    <bean id="gameService" class="com.ren.liveShow.service.impl.GameServiceImpl">
+        <property name="playerMapper" ref="playerMapper"/>
+    </bean>
+
+    <bean id="index" class="com.ren.liveShow.controller.indexController">
+        <property name="gameService" ref="gameService"/>
+    </bean>
+
+    <bean id="addPlayer" class="com.ren.liveShow.controller.addPlayerController">
+        <property name="gameService" ref="gameService"/>
+    </bean>
+
+    <bean id="page" class="com.ren.myssm.myspringmvc.PageController"/>
+</beans>

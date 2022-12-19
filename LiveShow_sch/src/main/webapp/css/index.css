@@ -1,0 +1,14 @@
+#tableMain{
+    margin-left: 20%;
+    text-align: center;
+    width: 35%;
+}
+
+#tableSec{
+    margin-right: 10%;
+    text-align: center;
+    width: 35%;
+}
+th{
+    text-align: center;
+}
