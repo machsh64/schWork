@@ -1,0 +1,15 @@
+*{
+    background: rgb(244, 236, 236);
+}
+
+table {
+    margin: 50px auto;
+    width: 500px;
+    text-align: center;
+    line-height: 32px;
+}
+
+.top {
+    height: 50px;
+    font-size: 28px;
+}

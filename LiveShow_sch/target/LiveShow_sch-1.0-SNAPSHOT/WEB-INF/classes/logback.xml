@@ -18,5 +18,5 @@
     </root>
 
     <!-- 根据特殊需求指定局部日志级别 -->
-    <logger name="com.ren.mybatis.mapper" level="DEBUG"/>
+    <logger name="com.ren.liveShow.mapper" level="DEBUG"/>
 </configuration>

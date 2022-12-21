@@ -19,6 +19,6 @@ public class addPlayerController {
             Player player = new Player(playerName, score);
             gameService.addPlayer(player);
         }
-        return "redirect:index.do?operate=index";
+        return "redirect:index.do?operate=index&page=rank1";
     }
 }

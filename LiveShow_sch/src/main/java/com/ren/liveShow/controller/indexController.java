@@ -17,7 +17,10 @@ public class indexController {
 
     GameService gameService;
 
-    public String index(HttpSession session) {
+    public String index(HttpSession session,String page) {
+        if (page == null){
+            page = "index";
+        }
         List<Player> playerList = gameService.getPlayerList();
         session.setAttribute("playerList", playerList);
 
@@ -36,7 +39,7 @@ public class indexController {
             qualifyPlayerList.add(playerList.get(i));
         }
         session.setAttribute("qualifyPlayerList",qualifyPlayerList);
-        return "index";
+        return page;
     }
 
     public String setPercent(HttpSession session, Integer percentage) {
@@ -44,6 +47,6 @@ public class indexController {
             percentage = (Integer)session.getAttribute("percentage");
         }
         session.setAttribute("percentage",percentage);
-        return "redirect:index.do?operate=index";
+        return "redirect:index.do?operate=index&page=rank2";
     }
 }

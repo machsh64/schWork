@@ -1,0 +1,26 @@
+div{
+    width: 100%;
+}
+form {
+
+    width: 40%;
+    line-height: 50px;
+
+    text-align: center;
+    margin: 100px auto;
+}
+
+.input {
+    outline: none;
+    width: 70%;
+    height: 35px;
+    border: none;
+    border: 1px solid #000000;
+}
+
+.btn {
+    width: 30%;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    background: rgb(46, 209, 245);
+}
