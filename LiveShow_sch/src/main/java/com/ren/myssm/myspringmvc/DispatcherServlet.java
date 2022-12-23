@@ -86,6 +86,8 @@ public class DispatcherServlet extends ViewBaseServlet {
                             if(parameterObj!=null) {
                                 if ("java.lang.Integer".equals(typeName)) {
                                     parameterObj = Integer.parseInt(parameterValue);
+                                }else if ("java.lang.Double".equals(typeName)) {
+                                    parameterObj = Double.parseDouble(parameterValue);
                                 }
                             }
 

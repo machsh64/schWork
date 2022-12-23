@@ -24,15 +24,15 @@ public class indexController {
         List<Player> playerList = gameService.getPlayerList();
         session.setAttribute("playerList", playerList);
 
-        int percentage;
+        double percentage;
         Object percentageObj = session.getAttribute("percentage");
         if (percentageObj == null){
-            percentage = 30;
+            percentage = 30.0;
             session.setAttribute("percentage",percentage);
         }else {
-            percentage = (Integer) percentageObj;
+            percentage = (Double) percentageObj;
         }
-        double percentageDb = (double) percentage / 100;
+        double percentageDb = percentage / 100;
         int aft = (int)(Math.round(playerList.size() * percentageDb));
         List<Player> qualifyPlayerList = new LinkedList<>();
         for(int i = 0; i < aft; i++){
@@ -42,9 +42,9 @@ public class indexController {
         return page;
     }
 
-    public String setPercent(HttpSession session, Integer percentage) {
+    public String setPercent(HttpSession session, Double percentage) {
         if (percentage == null) {
-            percentage = (Integer)session.getAttribute("percentage");
+            percentage = (Double) session.getAttribute("percentage");
         }
         session.setAttribute("percentage",percentage);
         return "redirect:index.do?operate=index&page=rank2";
