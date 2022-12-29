@@ -7,10 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="LiveShow_sch" />
+        <module name="liveshow_ssm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="LiveShow_sch" target="1.8" />
+      <module name="LiveShow_sch (1)" target="1.8" />
+      <module name="liveshow_ssm" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -13,17 +13,17 @@
 
 <beans>
 
-    <bean id="playerMapper" class="com.ren.liveShow.mapper.PlayerMapper"/>
+    <bean id="playerMapper" class="com.ren.liveshow.mapper.PlayerMapper"/>
 
-    <bean id="gameService" class="com.ren.liveShow.service.impl.GameServiceImpl">
+    <bean id="gameService" class="com.ren.liveshow.service.impl.GameServiceImpl">
         <property name="playerMapper" ref="playerMapper"/>
     </bean>
 
-    <bean id="index" class="com.ren.liveShow.controller.indexController">
+    <bean id="index" class="com.ren.liveshow.controller.indexController">
         <property name="gameService" ref="gameService"/>
     </bean>
 
-    <bean id="addPlayer" class="com.ren.liveShow.controller.addPlayerController">
+    <bean id="addPlayer" class="com.ren.liveshow.controller.addPlayerController">
         <property name="gameService" ref="gameService"/>
     </bean>
 

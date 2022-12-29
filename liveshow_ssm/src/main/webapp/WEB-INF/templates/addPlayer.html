@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/addPlayer.css"/>
+</head>
+
+<body>
+    <div>
+        <form th:action="@{/add/addPlayer}" method="post" onsubmit="return checkName()&&checkScore()">
+            <input class="input" type="text" placeholder="请输入姓名" id="name" name="playerName">
+            <input class="input" type="text" placeholder="请输入分数(0-100)" id="score" name="score">
+            <input class="btn" type="submit" value="提      交">
+        </form>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/addPlayer.js"></script>
+</html>

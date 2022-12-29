@@ -1,6 +1,6 @@
 package com.ren.myssm.util;
 
-import com.ren.liveShow.pojo.Player;
+import com.ren.liveshow.pojo.Player;
 
 import java.util.Arrays;
 import java.util.LinkedList;

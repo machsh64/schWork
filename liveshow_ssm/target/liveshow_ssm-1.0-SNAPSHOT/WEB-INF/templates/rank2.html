@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/rank2.css"/>
+</head>
+<body>
+    <table>
+        <tr class="top">
+            <td colspan="3">晋级排行榜</td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>分数</td>
+            <td>排名</td>
+        </tr>
+        <tr th:each="player : ${session.qualifyPlayerList}">
+            <td th:text="${player.PName}">蓝色妖姬</td>
+            <td th:text="${player.score}">88</td>
+            <td th:text="${player.rank}">2</td>
+        </tr>
+        
+    </table>
+<div style="margin-left: 38%">
+    <span th:text="'当前晋级率是：' + ${session.percentage}+'%'"></span>
+    <span th:text="'    晋级分数是：' + ${session.qualifyPlayerList.get(session.qualifyPlayerList.size()-1).score}+'分'"></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="liveshow_ssm:war">
+    <output-path>$PROJECT_DIR$/liveshow_ssm/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>liveshow_ssm</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="liveshow_ssm-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="liveshow_ssm:war exploded" />
+    </root>
+  </artifact>
+</component>

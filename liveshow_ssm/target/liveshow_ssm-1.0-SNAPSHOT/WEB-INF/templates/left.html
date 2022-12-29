@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/left.css"/>
+</head>
+<body>
+<ul>
+    <li onmouseover="OnmouseOn2(0)" onmouseleave="OnmouseOn1(0)" class="leftBand">
+        <a th:href="@{/index/pageInfo?page=rank1}" target="iframe_a">总排行榜</a>
+    </li>
+    <li onmouseover="OnmouseOn2(1)" onmouseleave="OnmouseOn1(1)" class="leftBand">
+        <a th:href="@{/index/pageInfo?page=rank2}" target="iframe_a">晋级排行榜</a>
+    </li>
+    <li onmouseover="OnmouseOn2(2)" onmouseleave="OnmouseOn1(2)" class="leftBand">
+        <a th:href="@{/index/pageInfo?page=addPlayer}" target="iframe_a">添加选手</a>
+    </li>
+    <li onmouseover="OnmouseOn2(3)" onmouseleave="OnmouseOn1(3)" class="leftBand">
+        <a th:href="@{/index/pageInfo?page=setPercent}" target="iframe_a">设置晋级百分比</a>
+    </li>
+</ul>
+
+<script type="text/javascript" src="js/left.js"></script>
+</body>
+</html>
