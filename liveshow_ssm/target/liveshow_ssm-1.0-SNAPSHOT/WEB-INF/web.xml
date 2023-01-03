@@ -11,20 +11,6 @@
         <param-value>classpath:spring-persist.xml</param-value>
     </context-param>
 
-    <!-- static resources -->
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.css</url-pattern>
-        <url-pattern>*.js</url-pattern>
-        <url-pattern>*.gif</url-pattern>
-        <url-pattern>*.jpg</url-pattern>
-        <url-pattern>*.jpeg</url-pattern>
-        <url-pattern>*.png</url-pattern>
-        <url-pattern>*.ico</url-pattern>
-        <url-pattern>*.zip</url-pattern>
-        <url-pattern>*.rar</url-pattern>
-    </servlet-mapping>
-
     <!-- 配置 ContextLoaderListener -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

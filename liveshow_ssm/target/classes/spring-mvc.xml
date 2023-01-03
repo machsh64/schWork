@@ -30,7 +30,12 @@
         </property>
     </bean>
 
+    <!-- 配置默认的servlet处理静态资源 -->
+    <mvc:default-servlet-handler/>
+
     <!-- SpringMVC 注解驱动（标配） -->
     <mvc:annotation-driven/>
 
+    <!-- 配置视图控制器 -->
+    <mvc:view-controller path="/" view-name="index"/>
 </beans>

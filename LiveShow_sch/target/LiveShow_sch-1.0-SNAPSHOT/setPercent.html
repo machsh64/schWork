@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/setPercent.css"/>
+</head>
+<body>
+    <div>
+        <form th:action="@{/index.do?operate=setPercent}" method="post"  onsubmit="return checkPercent()">
+
+            <input class="input" type="text" placeholder="输入晋级百分比(0-100)" name="percentage" id="percent">
+            <input class="btn" type="submit" value="提      交">
+        </form>
+    </div>
+
+<script type="text/javascript" src="js/setPercent.js"></script>
+</body>
+</html>
