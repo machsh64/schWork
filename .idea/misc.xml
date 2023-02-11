@@ -12,6 +12,8 @@
       <list>
         <option value="$PROJECT_DIR$/liveshow_ssm/pom.xml" />
         <option value="$PROJECT_DIR$/LiveShow_sch/pom.xml" />
+        <option value="$PROJECT_DIR$/goldpriceget/pom.xml" />
+        <option value="$PROJECT_DIR$/goldPrice/pom.xml" />
       </list>
     </option>
   </component>
