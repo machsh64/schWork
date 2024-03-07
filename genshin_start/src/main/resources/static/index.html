@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stu</title>
+    <link rel="stylesheet" href="plugins/element-ui/index.css"/>
+    <link rel="stylesheet" href="styles/index.css"/>
+    <link rel="stylesheet" href="styles/common.css"/>
+    <link rel="stylesheet" href="styles/page.css"/>
+</head>
+<body>
+
+<form action="first/stu" method="post">
+    姓名: <input name="name" type="text" placeholder="请输入姓名"/>
+    年龄: <input name="age" type="number" placeholder="输入年龄"/>
+    密码: <input name="password" type="text" placeholder="请输入密码"/>
+
+    <button type="submit" value="提交">提交</button>
+</form>
+<br><br>
+登录
+<form action="login/login" method="post">
+    姓名: <input name="name" type="text" placeholder="请输入姓名"/>
+    密码: <input name="password" type="text" placeholder="请输入密码"/>
+    <button type="submit" value="提交">登录</button>
+</form>
+
+<div id="app">
+    姓名: {{name}}
+    类型: {{funfun[i]}}
+    姓名: <input v-model="name"/>
+    <button @click="funA()">点击</button>
+    <br/><br/>
+    <hr/>
+    <button @click="funB()">点击</button>
+    显示的数字是(仅偶数会显示): <h2 v-if="num%2===0">{{num}}</h2>
+    <br/>
+    显示的数字是(仅奇数会显示): <h2 v-if="num%2!=0">{{num}}</h2>
+    <br/>
+    <b v-for="i1 in 20">{{i1}} , </b>
+    <br/>
+    <span v-for="s in funfun1">{{s}} , </span>
+    <br/>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+        <tr v-for="(s,m) in stus">
+            <td>{{m+1}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+        </tr>
+    </table>
+    <br/><br/>
+    <!-- 信息框 -->
+    <el-table
+            :data="stus"
+            stripe
+            class="tableBox">
+
+        <el-table-column
+                prop="name"
+                label="姓名">
+        </el-table-column>
+
+        <el-table-column
+                prop="age"
+                label="年龄">
+        </el-table-column>
+    </el-table>
+    <hr/>
+    <hr/>
+    <div class="container">
+        <!-- <navbar /> -->
+        <div class="navbar">
+            <div class="tableBar">
+                <!-- 模糊查询 -->
+                <el-input
+                        v-model="input"
+                        placeholder="请输入姓名"
+                        style="width: 250px"
+                        clearable
+                        @keyup.enter.native="handleQuery"
+                >
+                </el-input>
+
+            </div>
+
+        </div>
+
+        <!-- 信息框 -->
+        <el-table
+                :data="tableData"
+                stripe
+                class="tableBox">
+
+            <el-table-column
+                    prop="name"
+                    label="姓名">
+            </el-table-column>
+
+            <el-table-column
+                    prop="age"
+                    label="年龄">
+            </el-table-column>
+
+            <el-table-column
+                    prop="password"
+                    label="密码">
+            </el-table-column>
+
+        </el-table>
+
+        <el-pagination
+                class="pageList"
+                :page-sizes="[5, 8, 14, 20]"
+                :page-size="pageSize"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="counts"
+                :current-page.sync="page"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+        ></el-pagination>
+    </div>
+
+    <hr/>
+    <hr/>
+
+    <h1>支付模块</h1>
+
+    <div class="container">
+        <el-form
+                ref="aliPay"
+                :model="aliPay"
+                :inline="false"
+                label-width="180px"
+                class="demo-ruleForm"
+        >
+
+            <el-form-item
+                    label="购买物品:"
+                    prop="subject"
+            >
+                <el-input
+                        v-model="aliPay.subject"
+                        placeholder="请输入物品名称"
+                        maxlength="20"
+                />
+            </el-form-item>
+
+            <el-form-item
+                    label="订单号:"
+                    prop="traceNo">
+                <el-input
+                        v-model="aliPay.traceNo"
+                        placeholder="请输入订单号"
+                        maxlength="20"/>
+            </el-form-item>
+
+
+            <el-form-item
+                    label="价格:"
+                    prop="totalAmount">
+                <el-input
+                        v-model="aliPay.totalAmount"
+                        placeholder="请输入价格"
+                        maxlength="20"/>
+            </el-form-item>
+
+
+            <div class="subBox address">
+                <el-form-item>
+                    <el-button
+                            type="primary"
+                            @click="submitForm('aliPay')"
+                    >
+                        保存
+                    </el-button>
+                </el-form-item>
+            </div>
+        </el-form>
+    </div>
+</div>
+</body>
+<script src="plugins/vue/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="plugins/element-ui/index.js"></script>
+<!-- 引入axios -->
+<script src="plugins/axios/axios.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/request.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                name: 'test',
+                gender: '男',
+                i: 0,
+                funfun: ['stupid', 'foolish', 'retard'],
+                num: 0,
+                funfun1: ['stupid', 'foolish', 'retard', 'cop', 'ststst', 'ssss'],
+                stus: [
+                    {
+                        "name": 'haha',
+                        "age": 22
+                    },
+                    {
+                        "name": '214ha',
+                        "age": 25
+                    },
+                    {
+                        "name": 'hawsaf',
+                        "age": 62
+                    },
+                    {
+                        "name": 'dzgw',
+                        "age": 512
+                    }
+                ],
+                counts: 0,
+                page: 1,
+                pageSize: 5,
+                input: '',
+                tableData: [],
+                aliPay: {
+                    subject: '',
+                    tranceNo: '',
+                    totalAmount: 0
+                }
+            }
+        },
+        created() {
+            this.init();
+        },
+        methods: {
+            async init() {
+                const params = {
+                    page: this.page,
+                    pageSize: this.pageSize,
+                    name: this.input ? this.input : undefined
+                }
+                await getMemberList(params).then(res => {
+                    if (String(res.code) === '1') {
+                        this.tableData = res.data.records || []
+                        this.counts = res.data.total
+                    }
+                }).catch(err => {
+                    this.$message.error('请求出错了：' + err)
+                })
+            },
+            submitForm (formName) {
+                this.$axios({
+                    path: "/alipay/pay",
+                    data: {
+                        "subject" : formName.subject,
+                        "tranceNo" : formName.tranceNo,
+                        "totalAmount" : formName.totalAmount,
+                    } 
+                });
+           /*     this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                            addAccount(params).then(res => {
+                                if (res.code === 1) {
+                                    this.$message.success('账单成功！')
+                                    }
+                                 else {
+                                    this.$message.error(res.msg || '操作失败')
+                                }
+                            }).catch(err => {
+                                this.$message.error('请求出错了：' + err)
+                            })
+                    } else {
+                        console.log('error submit!!')
+                        return false
+                    }
+                })*/
+            },
+            handleQuery() {
+                this.page = 1;
+                this.init();
+            },
+            handleSizeChange(val) {
+                this.pageSize = val
+                this.init()
+            },
+            handleCurrentChange(val) {
+                this.page = val
+                this.init()
+            },
+            funA() {
+                alert("这是vue的弹出窗口");
+                this.i = Math.floor(Math.random() * 3);
+            },
+            funB() {
+                this.num = Math.floor(Math.random() * 100);
+            },
+        }
+    });
+</script>
+</html>

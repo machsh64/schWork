@@ -1,9 +1,0 @@
-spring:
-  mail:
-    default-encoding: utf-8
-    # 主机地址
-    host: smtp.qq.com
-    # 邮箱名
-    username: 3256772458@qq.com
-    # 授权码（不是密码）
-    password: huptdaydqkbvchfj

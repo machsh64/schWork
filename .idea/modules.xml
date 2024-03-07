@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LiveShow_sch/LiveShow_sch.iml" filepath="$PROJECT_DIR$/LiveShow_sch/LiveShow_sch.iml" />
-      <module fileurl="file://$PROJECT_DIR$/goldPrice/goldPrice.iml" filepath="$PROJECT_DIR$/goldPrice/goldPrice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autoreply/autoreply.iml" filepath="$PROJECT_DIR$/autoreply/autoreply.iml" />
+      <module fileurl="file://$PROJECT_DIR$/genshin_start/genshin_start.iml" filepath="$PROJECT_DIR$/genshin_start/genshin_start.iml" />
       <module fileurl="file://$PROJECT_DIR$/goldpriceget/goldpriceget.iml" filepath="$PROJECT_DIR$/goldpriceget/goldpriceget.iml" />
       <module fileurl="file://$PROJECT_DIR$/liveshow_ssm/liveshow_ssm.iml" filepath="$PROJECT_DIR$/liveshow_ssm/liveshow_ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xiaoxiaoguai-robot/robot.iml" filepath="$PROJECT_DIR$/xiaoxiaoguai-robot/robot.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/schoolwork.iml" filepath="$PROJECT_DIR$/.idea/schoolwork.iml" />
     </modules>
   </component>

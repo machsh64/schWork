@@ -7,24 +7,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="liveshow_ssm" />
         <module name="goldpriceget" />
+        <module name="liveshow_ssm" />
+        <module name="autoreplyrob" />
+        <module name="genshin_start" />
         <module name="LiveShow_sch" />
-        <module name="goldPrice" />
+        <module name="robot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="autoreply" target="1.8" />
+      <module name="autoreplyrob" target="1.8" />
+      <module name="genshin_start" target="1.8" />
       <module name="goldPrice" target="1.8" />
       <module name="goldpriceget" target="1.8" />
       <module name="LiveShow_sch" target="1.8" />
       <module name="LiveShow_sch (1)" target="1.8" />
       <module name="liveshow_ssm" target="1.8" />
+      <module name="robot" target="1.8" />
+      <module name="RobotReply" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="LiveShow_sch" options="-parameters" />
+      <module name="RobotReply" options="-parameters" />
+      <module name="autoreplyrob" options="-parameters" />
       <module name="goldpriceget" options="" />
     </option>
   </component>

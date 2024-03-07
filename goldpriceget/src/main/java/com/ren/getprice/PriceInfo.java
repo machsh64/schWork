@@ -78,7 +78,7 @@ public class PriceInfo {
         mimeMessage.setSubject("谷仓有变动！！！");
 
         //邮件内容
-        mimeMessage.setContent("查看",msg);
+        mimeMessage.setContent("查看fawasfwagaws","text/html;charset=UTF-8");
 
         //发送邮件
         transport.sendMessage(mimeMessage,mimeMessage.getAllRecipients());

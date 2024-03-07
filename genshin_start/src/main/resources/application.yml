@@ -1,0 +1,38 @@
+server:
+  port: 7777
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.161.128:3306/db01?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: omgd45945.+
+  redis:
+    host: 192.168.161.128
+    port: 6379
+    password: omgd45945.+
+    jedis:
+      pool:
+        # 连接池最大连接数，若为负数则表示没有任何限制
+        max-active: 8
+        # 连接池最大阻塞等待时间，若为负数则表示没有任何限制
+        max-wait: -1
+        # 连接池中的最大空闲连接
+        max-idle: 8
+
+mybatis-plus:
+  configuration:
+    # 驼峰命名法
+    map-underscore-to-camel-case: true
+    #
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+
+alipay:
+  appId: 9021000123611088
+  appPrivateKey: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCQqGrSWNCewDoWpBjDLMX96aB4oI/O44216UnGxXGokUeAUQKJ91YRBgmfozL/VQJITrSAs1oXMGDm8RkrJ8PevNYFWNIHFyiN5M8irVZ1V+f1G9OsrEahNBNnINtvYZzcGUp239AinEwqFaZxE8zEvXbTs3uUG104Lci0yGPs+wXqQeva7JPcGTayt5trtx6e+FrNHFzZOxAJKjihu6NVJihIQXAK6PUaxTzREDPOLEgHb56AfbM9TA6leod+XRMBMBb0k92VnKJupZjYEaRlHQaMgsM7IFH7snrcWkkkRrcMmG0kZR96CWPK47KSK/hkZu23d47pAcdveBSncehzAgMBAAECggEBAIgDozUWx0mNKtEhCBtz3NIqunTRW4ZHFXam3HSmL4E04Ir5IK8CvY0SJThRpeDIWHYOcs/UU3AcT/C1X1nhcNzcp0utwQVjtAD+0/giDXoV5obj3DquXVazdU7xaQIoQOn+abKuLLBuT3r+kloeKNoP30ucpiSTOipZei7pgHNP/R6kV7STFICv73rhOwJDeVhs+/tL+jm6GfZ8R2pkF3oBavk35Ee6ZEBuWKjKOISv+uWvZnu9L4kn9lIkM9FemfyZ0BnbIoTc94EjA4i8S1UyZCvq2wrILV47IG7/CHXSnGfyhOSovTYNfnoxF1mHgqMU2bm5pmRhmLOAlr270LkCgYEA74tXoPjDbXCt/B/2dWxckC+zWgg7ztChmsJ6XFTzyD0F+tcQK+++4Tr87nbJ3SVB0bzHLxhuXqVhtE8Y3MAZ2NX98ikhF0MJAJl1ZYYqXfXX4/OHP5VoYkZvw7kpmB7FX9DUuua0zZBcYaGiZAsTpmjWlGXYCpReYNaec4sCi0UCgYEAmphjyY1i6bUv7YSH6uC+/cYTL4FUm0mV9yyhHvz41kukGwkP8Pky+fwHsrb5Fv1MbNqqcfo9LGTNK5ITBhjBu3MUrXftPuRy9/DwDaYMRBCInB4S2H6mO9UD1uoHCYx+qQLUDHqC14yUmVaC1iE7sLrxoTm2e2tTXplxZ/yBhFcCgYEAu+8to9wnrwAdcFY/TWbjxDe4VaVqDts+PqXfy/rWfD3sKB180Yu5zQkzkX9e5oKpffzGpNtdFCJaYlVAI0kPvkA9iTTdgluUf4TmRu2Y5bjQVUYl0SvOBnROkVb/HBrgLUkw7SW9qh1dbTebqTPLid5so2a3ta0r0nvvOqVQLKUCgYAQgovNn5rbqKz4qbm2PNBI29l6rk4x01b/sbV3UL7ma+eXt40LSCHIjsDntiC98skxqtyfFYFo907uA0ii0wwFj9G6gN9GYzFgB0wruPsAXd+pBJEwq73nD+W8EvwzadyxAgtRVdgZWvsXsSSB58SvKBfcBwTVA25A4RQ6bb4LOwKBgQDOVTgxaPPwAfL6qMK26U5f6qgt3LePIUuC+xu5j7XPbRKNTBrvarP++E2iQN9TLIoiDYcR4Vw5T8VE754EAh3VpB3b0tnheQNt+amkZqbN/t3GNIXRCcvWgesHW21/2NUq+f0U6a2CVK1xXXYqPdWjK3dOr3LfzYh9OWU1O+tpKQ==
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkKhq0ljQnsA6FqQYwyzF/emgeKCPzuONtelJxsVxqJFHgFECifdWEQYJn6My/1UCSE60gLNaFzBg5vEZKyfD3rzWBVjSBxcojeTPIq1WdVfn9RvTrKxGoTQTZyDbb2Gc3BlKdt/QIpxMKhWmcRPMxL1207N7lBtdOC3ItMhj7PsF6kHr2uyT3Bk2sreba7cenvhazRxc2TsQCSo4obujVSYoSEFwCuj1GsU80RAzzixIB2+egH2zPUwOpXqHfl0TATAW9JPdlZyibqWY2BGkZR0GjILDOyBR+7J63FpJJEa3DJhtJGUfegljyuOykiv4ZGbtt3eO6QHHb3gUp3HocwIDAQAB
+  notifyUrl: http://localhost:7777/alipay/notify
+
